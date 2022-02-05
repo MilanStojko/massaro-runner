@@ -39,7 +39,10 @@ export default {
         this.jump = true;
         if (this.jump == true) {
           this.floating = true;
-          this.jump = false;
+          setTimeout(() => {
+            this.fall = true;
+            this.floating = false;
+          }, 300);
           this.fall = true;
           this.floating = false;
           console.log(this.jump);
@@ -47,6 +50,10 @@ export default {
           console.log(this.floating);
         }
       }
+      setTimeout(() => {
+        this.fall = false;
+        this.jump = false;
+      }, 300);
     },
   },
 };
