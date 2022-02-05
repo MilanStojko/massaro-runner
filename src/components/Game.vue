@@ -53,6 +53,9 @@ export default {
       setTimeout(() => {
         this.fall = false;
         this.jump = false;
+        console.log(this.jump);
+        console.log(this.fall);
+        console.log(this.floating);
       }, 300);
     },
   },
