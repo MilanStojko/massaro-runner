@@ -9,6 +9,13 @@
 <script>
 export default {
   name: "Game",
+  data(){
+    return{
+      gameStart : false,
+      
+
+    }
+  }
 };
 </script>
 
