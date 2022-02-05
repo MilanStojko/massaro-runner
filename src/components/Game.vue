@@ -42,7 +42,7 @@ export default {
           setTimeout(() => {
             this.fall = true;
             this.floating = false;
-          }, 300);
+          }, 500);
           this.fall = true;
           this.floating = false;
           console.log(this.jump);
@@ -56,7 +56,7 @@ export default {
         console.log(this.jump);
         console.log(this.fall);
         console.log(this.floating);
-      }, 300);
+      }, 500);
     },
   },
 };
