@@ -5,7 +5,7 @@
       src="../assets/img/car.gif"
       alt=""
       id="massaro"
-      :class="{ jump: jump, fall: fall }"
+      :class="{ jump: jump, fall: fall, floating: floating }"
       @click="massaroJump()"
     />
     <div class="sky"></div>
@@ -24,6 +24,7 @@ export default {
       gameSpeed: 15,
       jump: false,
       fall: false,
+      floating: false,
     };
   },
   methods: {
@@ -35,15 +36,16 @@ export default {
     // },
     massaroJump() {
       if (!this.jump) {
-        setTimeout(() => {
-          this.jump = true;
-          if (this.jump == true) {
-            setTimeout(() => {
-              this.fall = true;
-            }, 500);
-          }
-        }, 0);
-        this.jump = false;
+        this.jump = true;
+        if (this.jump == true) {
+          this.floating = true;
+          this.jump = false;
+          this.fall = true;
+          this.floating = false;
+          console.log(this.jump);
+          console.log(this.fall);
+          console.log(this.floating);
+        }
       }
     },
   },
