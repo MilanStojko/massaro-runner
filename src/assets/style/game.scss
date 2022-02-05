@@ -53,11 +53,11 @@
 }
 
 .jump {
-  animation: jump 0.3s linear forwards;
+  animation: jump 0.5s linear forwards;
 }
 
 .fall {
-  animation: jump 0.3s linear reverse;
+  animation: jump 0.5s linear reverse;
 }
 
 @keyframes jump {
