@@ -3,7 +3,7 @@
   // margin: 50px 0 0 0;
   height: 480px;
   width: 100%;
-  // border: 1px solid red;
+  border: 1px solid red;
 }
 
 #massaro {
@@ -49,6 +49,11 @@
 
 // Animazioni
 .jump {
+  animation: jump 0.3s linear forwards;
+}
+
+.fall {
+  animation: jump 0.3s linear reverse;
 }
 
 @keyframes jump {
@@ -56,6 +61,6 @@
     margin-bottom: 0;
   }
   to {
-    margin-bottom: 150px;
+    margin-bottom: 200px;
   }
 }
