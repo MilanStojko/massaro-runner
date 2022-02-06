@@ -49,20 +49,29 @@ export default {
     //     console.log(this.gameStart);
     //   }
     // },
-    massaroJump() {
-      this.jump = true;
-      setTimeout(() => {
-        this.jump = false;
-        this.floating = true;
-      }, 500);
-      setTimeout(() => {
-        this.floating = false;
-        this.fall = true;
-      }, 1500);
-      setTimeout(() => {
-        this.fall = false;
-      }, 2000);
-      clearTimeout();
+    massaroJump(e) {
+      if (e.code === "Space") {
+        console.log("Spacebar premuta");
+
+        e.preventDefault();
+        this.jump = true;
+        setTimeout(() => {
+          this.jump = false;
+          this.floating = true;
+        }, 500);
+      }
+    },
+    massaroLanding(e) {
+      if (e.code === "Space") {
+        console.log("Spacebar rilasciata");
+        setTimeout(() => {
+          this.floating = false;
+          this.fall = true;
+        }, 1500);
+        setTimeout(() => {
+          this.fall = false;
+        }, 2000);
+      }
     },
   },
 };
