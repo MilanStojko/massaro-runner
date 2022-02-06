@@ -3,7 +3,7 @@
   // margin: 50px 0 0 0;
   height: 480px;
   width: 100%;
-  border: 1px solid red;
+  // border: 1px solid red;
 }
 
 #massaro {
@@ -24,9 +24,8 @@
   background: #000;
   background: linear-gradient(
     0deg,
-    rgba(71, 9, 122, 1) 0%,
-    rgba(0, 0, 0, 1) 85%,
-    rgba(0, 0, 0, 1) 100%
+    rgba(140, 0, 255, 0.5) 0%,
+    transparent 100%
   );
 }
 
@@ -43,8 +42,7 @@
     rgba(33, 14, 61, 1) 65%,
     rgba(61, 26, 113, 1) 100%
   );
-
-  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.2), 0 50px 30px rgba(0, 0, 0, 0.3);
 }
 
 // Animazioni
