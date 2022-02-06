@@ -1,20 +1,38 @@
 #game {
   position: relative;
-  // margin: 50px 0 0 0;
+  margin: 50px 0 100px 0;
   height: 480px;
   width: 100%;
-  border: 1px solid red;
+  perspective: 1500px;
+
+  // border: 1px solid red;
+}
+
+.vhs-glitch {
+  position: absolute;
+  z-index: 4;
+  top: -120px;
+  bottom: -20px;
+  left: 0;
+  right: 0;
+  // background: url("../img//vhs-glitch.webp") repeat-x;
+  background: url("https://i.giphy.com/media/WFGW9xik06wtG/giphy.webp") repeat-x;
+  background-size: contain;
+  filter: contrast(100%) brightness(100%) saturate(0%);
+  opacity: 0.05;
 }
 
 #massaro {
   z-index: 3;
   position: absolute;
-  bottom: 120px;
-  left: 100px;
+  bottom: 25px;
+  left: 10%;
   transform: scale(2);
+  animation: idle 5s linear infinite;
 }
 
 .sky {
+  // visibility: hidden;
   z-index: 1;
   position: absolute;
   top: 0;
@@ -24,32 +42,72 @@
   background: #000;
   background: linear-gradient(
     0deg,
-    rgba(71, 9, 122, 1) 0%,
-    rgba(0, 0, 0, 1) 85%,
-    rgba(0, 0, 0, 1) 100%
+    rgba(140, 0, 255, 0.5) 0%,
+    transparent 100%
   );
 }
 
 .ground {
   z-index: 2;
   position: absolute;
-  bottom: 0;
-  height: 130px;
-  width: 100%;
+  left: -500px;
+  right: -500px;
+  bottom: -30px;
+  height: 120px;
+  // width: 100%;
   background: rgb(31, 12, 82);
   background: linear-gradient(
     0deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(33, 14, 61, 1) 65%,
-    rgba(61, 26, 113, 1) 100%
+    rgba(57, 9, 94, 1) 0%,
+    rgba(58, 7, 97, 1) 35%,
+    rgba(39, 9, 61, 1) 85%,
+    rgba(34, 10, 52, 1) 100%
   );
+  box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.3), 0 5px 15px rgba(0, 0, 0, 0.4);
+  transform-style: preserve-3d;
+  transform: rotateX(45deg);
+}
 
-  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.4);
+.ground::after {
+  content: "";
+  position: absolute;
+  top: 55px;
+  width: 200%;
+  border-bottom: 10px dashed #fff;
+  animation: street-flow 5s linear infinite;
+}
+
+.animated-bg {
+  // visibility: hidden;
+  z-index: -1;
+  position: absolute;
+  bottom: 70px;
+  overflow: hidden;
+  height: 550px;
+
+  & > video {
+    height: 100%;
+    width: 100vw;
+    object-fit: cover;
+  }
 }
 
 // Animazioni
+@keyframes idle {
+  0%,
+  100% {
+    margin-left: 0;
+  }
+  30% {
+    margin-left: 35px;
+  }
+  70% {
+    margin-left: -15px;
+  }
+}
+
 .floating {
-  margin-bottom: 200px;
+  margin-bottom: 300px;
 }
 
 .jump {
@@ -65,6 +123,15 @@
     margin-bottom: 0;
   }
   to {
-    margin-bottom: 200px;
+    margin-bottom: 300px;
+  }
+}
+
+@keyframes street-flow {
+  from {
+    left: 0;
+  }
+  to {
+    left: -100%;
   }
 }

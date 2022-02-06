@@ -1,20 +1,30 @@
 <template>
   <div id="app">
-    <div id="logo">Massaro Runner 🏃</div>
+    <img src="./assets/img/Ribbon-Alpha.png" alt="" id="ribbon" />
+    <img
+      src="./assets/img/Massaro-Runner-logo-nolights.png"
+      alt="Massaro Runner"
+      id="logo"
+    />
     <Game />
+    <Music />
     <Info />
+    <!-- <div class="neonbar"></div> -->
+    <div class="background"></div>
   </div>
 </template>
 
 <script>
 import Game from "./components/Game.vue";
 import Info from "./components/Info.vue";
+import Music from "./components/Music.vue";
 
 export default {
   name: "App",
   components: {
     Game,
     Info,
+    Music,
   },
 };
 </script>

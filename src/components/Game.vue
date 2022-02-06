@@ -1,15 +1,22 @@
 <template>
   <div id="game">
     <!-- <div class="play" @click="startGame()">Gioca!!</div> -->
+    <div class="vhs-glitch"></div>
     <img
       src="../assets/img/car.gif"
       alt=""
       id="massaro"
       :class="{ jump: jump, fall: fall, floating: floating }"
-      @click="massaroJump()"
     />
+    <div class="ground">
+      <div class="flow"></div>
+    </div>
     <div class="sky"></div>
-    <div class="ground"></div>
+    <div class="animated-bg">
+      <video autoplay muted loop>
+        <source src="../assets/video/background.mp4" type="video/mp4" />
+      </video>
+    </div>
   </div>
 </template>
 
@@ -26,6 +33,14 @@ export default {
       fall: false,
       floating: false,
     };
+  },
+  created() {
+    document.addEventListener("keydown", (e) => {
+      this.massaroJump(e);
+    });
+    document.addEventListener("keyup", (e) => {
+      this.massaroLanding(e);
+    });
   },
   methods: {
     // startGame() {
