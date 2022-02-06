@@ -1,4 +1,4 @@
-## Massaro Runner ![Italy](https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/openmoji/292/flag-italy_1f1ee-1f1f9.png)
+## Massaro Runner ![Italy](https://cdn-icons-png.flaticon.com/512/330/330010.png | width=32)
 
 ### Ma che è?
 
