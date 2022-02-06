@@ -1,3 +1,3 @@
 ### Ma che è?
 
-Un gioco che promette di esplorare i più profondi sentimenti umani e le più recondite emozioni umane.
+Bernardini deve ancora scriverci un testo accattivamente per pubblicizzare questo gioco incredibile.
