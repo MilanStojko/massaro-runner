@@ -47,7 +47,10 @@ export default {
       setTimeout(() => {
         this.fall = false;
       }, 2000);
+<<<<<<< HEAD
       clearTimeout();
+=======
+>>>>>>> 087c5e63b22a62de89aeeb9eb1031bbb82304ca1
     },
   },
 };
