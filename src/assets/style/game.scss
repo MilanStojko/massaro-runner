@@ -17,6 +17,7 @@
 }
 
 .sky {
+  visibility: hidden;
   z-index: 1;
   position: absolute;
   top: 0;
@@ -47,7 +48,7 @@
     rgba(39, 9, 61, 1) 85%,
     rgba(34, 10, 52, 1) 100%
   );
-  // box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.2), 0 5px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.3), 0 5px 5px rgba(0, 0, 0, 0.4);
   transform-style: preserve-3d;
   transform: rotateX(45deg);
 }
@@ -60,6 +61,20 @@
   border-bottom: 20px dashed #fff;
   opacity: 1;
   animation: street-flow 3s linear infinite;
+}
+
+.animated-bg {
+  z-index: -1;
+  position: absolute;
+  bottom: 100px;
+  overflow: hidden;
+  height: 550px;
+
+  & > video {
+    height: 100%;
+    width: 100vw;
+    object-fit: cover;
+  }
 }
 
 // Animazioni

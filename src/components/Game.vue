@@ -7,9 +7,14 @@
       id="massaro"
       :class="{ jump: jump, fall: fall, floating: floating }"
     />
-    <div class="sky"></div>
     <div class="ground">
       <div class="flow"></div>
+    </div>
+    <div class="sky"></div>
+    <div class="animated-bg">
+      <video autoplay muted loop>
+        <source src="../assets/video/background.mp4" type="video/mp4" />
+      </video>
     </div>
   </div>
 </template>

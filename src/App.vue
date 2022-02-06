@@ -3,11 +3,7 @@
     <div id="logo">Massaro Runner 🏃</div>
     <Game />
     <Info />
-    <div class="animated-bg">
-      <video autoplay muted loop>
-        <source src="./assets/video/background.mp4" type="video/mp4" />
-      </video>
-    </div>
+    <div class="background"></div>
   </div>
 </template>
 
