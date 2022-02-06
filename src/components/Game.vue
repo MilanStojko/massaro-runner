@@ -54,23 +54,25 @@ export default {
       if (e.code === "Space") {
         console.log("Spacebar premuta");
         e.preventDefault();
-
-        this.nowIdle = false;
-        this.nowJump = true;
+        if (this.nowIdle == true) {
+          this.nowIdle = false;
+          this.nowJump = true;
+        }
       }
     },
     massaroLanding(e) {
       if (e.code === "Space") {
         console.log("Spacebar rilasciata");
 
-        setTimeout(() => {
+        if (this.nowJump == true) {
           this.nowJump = false;
           this.nowFall = true;
-        }, 500);
-        setTimeout(() => {
-          this.nowFall = false;
-          this.nowIdle = true;
-        }, 1000);
+
+          setTimeout(() => {
+            this.nowFall = false;
+            this.nowIdle = true;
+          }, 500);
+        }
       }
     },
   },
