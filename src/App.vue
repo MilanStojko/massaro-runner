@@ -6,6 +6,9 @@
       alt="Massaro Runner"
       id="logo"
     />
+    <div class="small-screen">
+      Mi dispiace il tuo schermo è troppo piccolo per poter giocare!
+    </div>
     <Game />
     <Music />
     <Info />
