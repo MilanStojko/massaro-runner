@@ -51,13 +51,12 @@ export default {
 <style lang="scss" scoped>
 .info {
   display: flex;
-  margin: 300px 10px 10px 10px;
-  padding: 50px;
+  margin-bottom: 50px;
   font-size: 1.5rem;
   letter-spacing: 1px;
 
   & > div {
-    padding: 50px 100px;
+    padding: 50px 5%;
     min-height: 300px;
     width: 50%;
     border-right: 3px solid #fff;
