@@ -21,33 +21,6 @@ body {
   overflow-x: hidden;
 }
 
-body::after {
-  visibility: hidden;
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 15px;
-  background: rgb(125, 0, 228);
-  animation: neon 15s infinite;
-}
-
-@keyframes neon {
-  0%,
-  65%,
-  67%,
-  70%,
-  72%,
-  100% {
-    box-shadow: 0 5px 15px 5px rgba(140, 0, 255, 0.5);
-  }
-  66%,
-  71% {
-    box-shadow: 0 5px 15px 5px rgba(140, 0, 255, 0);
-  }
-}
-
 #logo {
   z-index: 5;
   position: relative;
@@ -80,3 +53,36 @@ body::after {
   left: 0;
   width: 150px;
 }
+
+// .neonbar {
+//   // visibility: hidden;
+//   width: 100%;
+//   margin-top: 100px;
+//   height: 15px;
+//   background: #7d00e4;
+//   animation: neon 15s infinite;
+// }
+
+// @keyframes neon {
+//   0%,
+//   65%,
+//   67%,
+//   70%,
+//   72%,
+//   100% {
+//     background: #7d00e4;
+
+//     box-shadow: 0 -2px 3px rgba(255, 255, 255, 0.1),
+//       0 -2px 5px rgba(255, 255, 255, 0.1),
+//       0 -5px 15px 5px rgba(140, 0, 255, 0.7),
+//       0 -5px 20px 5px rgba(140, 0, 255, 0.7);
+//   }
+//   66%,
+//   71% {
+//     background: #000;
+
+//     box-shadow: -2px 3px rgba(255, 255, 255, 0.1),
+//       0 -2px 5px rgba(255, 255, 255, 0.1), 0 -5px 15px 5px rgba(140, 0, 255, 0),
+//       0 -5px 20px 5px rgba(140, 0, 255, 0);
+//   }
+// }

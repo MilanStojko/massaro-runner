@@ -7,8 +7,9 @@
       id="logo"
     />
     <Game />
-
+    <Music />
     <Info />
+    <!-- <div class="neonbar"></div> -->
     <div class="background"></div>
   </div>
 </template>
@@ -16,12 +17,14 @@
 <script>
 import Game from "./components/Game.vue";
 import Info from "./components/Info.vue";
+import Music from "./components/Music.vue";
 
 export default {
   name: "App",
   components: {
     Game,
     Info,
+    Music,
   },
 };
 </script>

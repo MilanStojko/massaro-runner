@@ -1,9 +1,9 @@
 #game {
   position: relative;
-  margin: 50px 0 250px 0;
+  margin: 50px 0 100px 0;
   height: 480px;
   width: 100%;
-  perspective: 100px;
+  perspective: 1500px;
 
   // border: 1px solid red;
 }
@@ -11,8 +11,8 @@
 #massaro {
   z-index: 3;
   position: absolute;
-  bottom: 120px;
-  left: 20%;
+  bottom: 25px;
+  left: 10%;
   transform: scale(2);
 }
 
@@ -37,8 +37,8 @@
   position: absolute;
   left: -500px;
   right: -500px;
-  bottom: 0;
-  height: 100px;
+  bottom: -30px;
+  height: 120px;
   // width: 100%;
   background: rgb(31, 12, 82);
   background: linear-gradient(
@@ -48,7 +48,7 @@
     rgba(39, 9, 61, 1) 85%,
     rgba(34, 10, 52, 1) 100%
   );
-  box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.3), 0 5px 5px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.3), 0 5px 15px rgba(0, 0, 0, 0.4);
   transform-style: preserve-3d;
   transform: rotateX(45deg);
 }
@@ -56,17 +56,17 @@
 .ground::after {
   content: "";
   position: absolute;
-  top: 40px;
+  top: 55px;
   width: 200%;
-  border-bottom: 20px dashed #fff;
-  opacity: 1;
-  animation: street-flow 3s linear infinite;
+  border-bottom: 10px dashed #fff;
+  animation: street-flow 5s linear infinite;
 }
 
 .animated-bg {
+  // visibility: hidden;
   z-index: -1;
   position: absolute;
-  bottom: 100px;
+  bottom: 70px;
   overflow: hidden;
   height: 550px;
 
@@ -79,7 +79,7 @@
 
 // Animazioni
 .floating {
-  margin-bottom: 200px;
+  margin-bottom: 300px;
 }
 
 .jump {
@@ -95,7 +95,7 @@
     margin-bottom: 0;
   }
   to {
-    margin-bottom: 200px;
+    margin-bottom: 300px;
   }
 }
 
