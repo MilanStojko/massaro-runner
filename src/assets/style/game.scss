@@ -1,6 +1,6 @@
 #game {
   position: relative;
-  margin: 50px 0 250px 0;
+  margin: 50px 0 100px 0;
   height: 480px;
   width: 100%;
   perspective: 1500px;
@@ -48,7 +48,7 @@
     rgba(39, 9, 61, 1) 85%,
     rgba(34, 10, 52, 1) 100%
   );
-  box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.3), 0 5px 5px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.3), 0 5px 15px rgba(0, 0, 0, 0.4);
   transform-style: preserve-3d;
   transform: rotateX(45deg);
 }
