@@ -15,7 +15,7 @@
   bottom: -20px;
   left: 0;
   right: 0;
-  // background: url("../img//vhs-glitch.webp") repeat-x;
+  // background: url("../img/vhs-glitch.webp") repeat-x;
   background: url("https://i.giphy.com/media/WFGW9xik06wtG/giphy.webp") repeat-x;
   background-size: contain;
   filter: contrast(100%) brightness(100%) saturate(0%);
@@ -28,7 +28,6 @@
   bottom: 25px;
   left: 10%;
   transform: scale(2);
-  animation: idle 5s linear infinite;
 }
 
 .sky {
@@ -93,6 +92,10 @@
 }
 
 // Animazioni
+.idle {
+  animation: idle 5s linear infinite;
+}
+
 @keyframes idle {
   0%,
   100% {
