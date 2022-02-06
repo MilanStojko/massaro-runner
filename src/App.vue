@@ -1,7 +1,13 @@
 <template>
   <div id="app">
-    <div id="logo">Massaro Runner 🏃</div>
+    <img src="./assets/img/Ribbon Alpha.png" alt="" id="ribbon" />
+    <img
+      src="./assets/img/Massaro-Runner-logo-nolights.png"
+      alt="Massaro Runner"
+      id="logo"
+    />
     <Game />
+
     <Info />
     <div class="background"></div>
   </div>

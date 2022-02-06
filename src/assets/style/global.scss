@@ -49,10 +49,12 @@ body::after {
 }
 
 #logo {
-  visibility: hidden;
-  margin: 50px auto 50px auto;
-  padding: 0 20px;
-  width: fit-content;
+  z-index: 5;
+  position: relative;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 750px;
   font-size: 3rem;
   letter-spacing: 5px;
   // border-bottom: 3px solid #fff;
@@ -69,4 +71,12 @@ body::after {
   background-size: cover;
   filter: blur(10px);
   opacity: 0.3;
+}
+
+#ribbon {
+  z-index: 4;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150px;
 }
