@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img src="./assets/img/Ribbon Alpha.png" alt="" id="ribbon" />
+    <img src="./assets/img/Ribbon-Alpha.png" alt="" id="ribbon" />
     <img
       src="./assets/img/Massaro-Runner-logo-nolights.png"
       alt="Massaro Runner"
