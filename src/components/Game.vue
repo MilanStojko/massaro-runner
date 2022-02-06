@@ -1,6 +1,7 @@
 <template>
   <div id="game">
     <!-- <div class="play" @click="startGame()">Gioca!!</div> -->
+    <div class="vhs-glitch"></div>
     <img
       src="../assets/img/car.gif"
       alt=""
