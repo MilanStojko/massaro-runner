@@ -3,7 +3,7 @@
   // margin: 50px 0 0 0;
   height: 480px;
   width: 100%;
-  perspective: 50px;
+  perspective: 100px;
 
   // border: 1px solid red;
 }
@@ -12,7 +12,7 @@
   z-index: 3;
   position: absolute;
   bottom: 120px;
-  left: 100px;
+  left: 20%;
   transform: scale(2);
 }
 
@@ -34,9 +34,11 @@
 .ground {
   z-index: 2;
   position: absolute;
+  left: -500px;
+  right: -500px;
   bottom: 0;
-  height: 130px;
-  width: 5000px;
+  height: 100px;
+  // width: 100%;
   background: rgb(31, 12, 82);
   background: linear-gradient(
     0deg,
@@ -45,19 +47,19 @@
     rgba(58, 7, 97, 1) 85%,
     rgba(57, 9, 94, 1) 100%
   );
-  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.2), 0 5px 5px rgba(0, 0, 0, 0.3);
+  // box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.2), 0 5px 5px rgba(0, 0, 0, 0.3);
   transform-style: preserve-3d;
-  transform: rotateX(10deg);
-  animation: street-flow 3s linear infinite;
+  transform: rotateX(45deg);
 }
 
 .ground::after {
   content: "";
   position: absolute;
-  top: 60px;
-  width: 100%;
+  top: 40px;
+  width: 200%;
   border-bottom: 20px dashed #fff;
   opacity: 1;
+  animation: street-flow 3s linear infinite;
 }
 
 // Animazioni
@@ -84,9 +86,9 @@
 
 @keyframes street-flow {
   from {
-    left: -300px;
+    left: 0;
   }
   to {
-    left: -2000px;
+    left: -100%;
   }
 }

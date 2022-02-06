@@ -51,7 +51,7 @@ export default {
 <style lang="scss" scoped>
 .info {
   display: flex;
-  margin: 100px 50px;
+  margin: 300px 10px 10px 10px;
   padding: 50px;
   font-size: 1.5rem;
   letter-spacing: 1px;

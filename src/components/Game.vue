@@ -8,7 +8,9 @@
       :class="{ jump: jump, fall: fall, floating: floating }"
     />
     <div class="sky"></div>
-    <div class="ground"></div>
+    <div class="ground">
+      <div class="flow"></div>
+    </div>
   </div>
 </template>
 
