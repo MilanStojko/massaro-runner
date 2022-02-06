@@ -28,7 +28,6 @@
   bottom: 25px;
   left: 10%;
   transform: scale(2);
-  animation: idle 5s linear infinite;
 }
 
 .sky {
@@ -93,6 +92,10 @@
 }
 
 // Animazioni
+.idle {
+  animation: idle 5s linear infinite;
+}
+
 @keyframes idle {
   0%,
   100% {
