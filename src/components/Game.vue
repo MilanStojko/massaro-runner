@@ -6,7 +6,6 @@
       alt=""
       id="massaro"
       :class="{ jump: jump, fall: fall, floating: floating }"
-      @click="massaroJump()"
     />
     <div class="sky"></div>
     <div class="ground"></div>
@@ -27,6 +26,14 @@ export default {
       floating: false,
     };
   },
+  created() {
+    document.addEventListener("keydown", (e) => {
+      this.massaroJump(e);
+    });
+    document.addEventListener("keyup", (e) => {
+      this.massaroLanding(e);
+    });
+  },
   methods: {
     // startGame() {
     //   if (!this.gameStart) {
@@ -34,23 +41,29 @@ export default {
     //     console.log(this.gameStart);
     //   }
     // },
-    massaroJump() {
-      this.jump = true;
-      setTimeout(() => {
-        this.jump = false;
-        this.floating = true;
-      }, 500);
-      setTimeout(() => {
-        this.floating = false;
-        this.fall = true;
-      }, 1500);
-      setTimeout(() => {
-        this.fall = false;
-      }, 2000);
-<<<<<<< HEAD
-      clearTimeout();
-=======
->>>>>>> 087c5e63b22a62de89aeeb9eb1031bbb82304ca1
+    massaroJump(e) {
+      if (e.code === "Space") {
+        console.log("Spacebar premuta");
+
+        e.preventDefault();
+        this.jump = true;
+        setTimeout(() => {
+          this.jump = false;
+          this.floating = true;
+        }, 500);
+      }
+    },
+    massaroLanding(e) {
+      if (e.code === "Space") {
+        console.log("Spacebar rilasciata");
+        setTimeout(() => {
+          this.floating = false;
+          this.fall = true;
+        }, 1500);
+        setTimeout(() => {
+          this.fall = false;
+        }, 2000);
+      }
     },
   },
 };
