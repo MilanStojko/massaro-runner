@@ -38,10 +38,9 @@ export default {
       if (!this.jump) {
         this.jump = true;
         if (this.jump == true) {
-          this.floating = true;
           setTimeout(() => {
-            this.fall = true;
-            this.floating = false;
+            
+            this.floating = true;
           }, 500);
           this.fall = true;
           this.floating = false;
