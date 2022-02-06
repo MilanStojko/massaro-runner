@@ -35,27 +35,19 @@ export default {
     //   }
     // },
     massaroJump() {
-      if (!this.jump) {
-        this.jump = true;
-        if (this.jump == true) {
-          setTimeout(() => {
-            
-            this.floating = true;
-          }, 500);
-          this.fall = true;
-          this.floating = false;
-          console.log(this.jump);
-          console.log(this.fall);
-          console.log(this.floating);
-        }
-      }
+      this.jump = true;
+      setTimeout(() => {
+        this.jump = false;
+        this.floating = true;
+      }, 500);
+      setTimeout(() => {
+        this.floating = false;
+        this.fall = true;
+      }, 1500);
       setTimeout(() => {
         this.fall = false;
-        this.jump = false;
-        console.log(this.jump);
-        console.log(this.fall);
-        console.log(this.floating);
-      }, 500);
+      }, 2000);
+      clearTimeout();
     },
   },
 };
