@@ -6,12 +6,7 @@
       src="../assets/img/car.gif"
       alt=""
       id="massaro"
-<<<<<<< HEAD
-      class="idle"
-      :class="{ jump: jump, fall: fall, floating: floating }"
-=======
       :class="{ idle: nowIdle, jump: nowJump, fall: nowFall }"
->>>>>>> 2bf8bd847c20ce5c037ae839a518197ac93f5106
     />
     <div class="ground">
       <div class="flow"></div>
