@@ -7,6 +7,7 @@
       alt=""
       id="massaro"
       :style="massaroStyle"
+      :class="{ idle: nowIdle }"
     />
     <div class="ground">
       <div class="flow"></div>
@@ -69,6 +70,8 @@ export default {
         this.faling == false
       ) {
         this.nowJumping = true;
+        this.nowIdle = false;
+        console.log(this.nowIdle);
         this.jump = setInterval(() => {
           //cadi
           if (this.position === 300 || !this.nowJumping) {
@@ -79,6 +82,7 @@ export default {
               if (this.position === 30) {
                 clearInterval(this.fall);
                 this.faling = false;
+                this.nowIdle = true;
               }
               this.position -= 10;
               this.massaroStyle.bottom = this.position + "px";
