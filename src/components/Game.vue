@@ -37,6 +37,7 @@ export default {
       },
       jump: null,
       fall: null,
+      faling: false,
     };
   },
   created() {
@@ -62,20 +63,26 @@ export default {
       }
     },
     massaroJump() {
-      if (this.nowIdle == true && this.nowJumping === false) {
+      if (
+        this.nowIdle == true &&
+        this.nowJumping === false &&
+        this.faling == false
+      ) {
         this.nowJumping = true;
         this.jump = setInterval(() => {
           //cadi
           if (this.position === 300 || !this.nowJumping) {
             console.log("giu");
             clearInterval(this.jump);
+            this.faling = true;
             this.fall = setInterval(() => {
               if (this.position === 30) {
                 clearInterval(this.fall);
-                this.nowJumping = false;
+                this.faling = false;
               }
               this.position -= 10;
               this.massaroStyle.bottom = this.position + "px";
+              this.nowJumping = false;
             }, 20);
           }
           //salta
