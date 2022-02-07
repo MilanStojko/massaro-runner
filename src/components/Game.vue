@@ -6,6 +6,7 @@
       src="../assets/img/car.gif"
       alt=""
       id="massaro"
+      class="idle"
       :class="{ jump: jump, fall: fall, floating: floating }"
     />
     <div class="ground">
