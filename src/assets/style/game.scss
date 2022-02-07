@@ -80,7 +80,7 @@
   }
 }
 
-.palms1 {
+.palm1 {
   z-index: 4;
   position: absolute;
   bottom: -690px;
@@ -88,11 +88,11 @@
   width: 1153px;
   transform: scale(0.07);
   filter: brightness(60%);
-  background: url("../assets/img/palms1.png");
-  animation: palms1-parallax 10s linear infinite;
+  background: url("../assets/img/palm1.png");
+  animation: palm1-parallax 10s linear infinite;
 }
 
-@keyframes palms1-parallax {
+@keyframes palm1-parallax {
   from {
     right: -50%;
   }
@@ -101,7 +101,7 @@
   }
 }
 
-.palms2 {
+.palm2 {
   z-index: 5;
   position: absolute;
   bottom: -1020px;
@@ -109,11 +109,11 @@
   height: 2500px;
   width: 2500px;
   transform: scale(0.15);
-  background: url("../assets/img/palms2.png");
-  animation: palms2-parallax 5s linear infinite;
+  background: url("../assets/img/palm2.png");
+  animation: palm2-parallax 5s linear infinite;
 }
 
-@keyframes palms2-parallax {
+@keyframes palm2-parallax {
   from {
     right: -110%;
   }

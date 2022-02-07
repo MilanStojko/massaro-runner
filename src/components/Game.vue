@@ -12,8 +12,8 @@
     <div class="ground">
       <div class="flow"></div>
     </div>
-    <div class="palms2"></div>
-    <div class="palms1"></div>
+    <div class="palm2"></div>
+    <div class="palm1"></div>
     <div class="city2"></div>
     <div class="city1"></div>
     <div class="sky"></div>
