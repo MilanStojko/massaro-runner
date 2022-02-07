@@ -13,12 +13,11 @@
     <div class="ground">
       <div class="flow"></div>
     </div>
-    <!-- TODO Tolgo video per sostituirlo con immagini in movimento -->
-    <!-- <img src="../assets/img/palm2.jpg" alt="" class="palm2" />
-    <img src="../assets/img/palm1.jpg" alt="" class="palm1" />
-    <img src="../assets/img/city2.jpg" alt="" class="city2" />
-    <img src="../assets/img/city1.jpg" alt="" class="city1" />
-    <img src="../assets/img/sky.jpg" alt="" class="sky" /> -->
+    <div class="palm2"></div>
+    <div class="palm1"></div>
+    <div class="city2"></div>
+    <div class="city1"></div>
+    <div class="sky"></div>
   </div>
 </template>
 
