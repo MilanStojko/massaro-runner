@@ -15,14 +15,11 @@ export default {
 
 <style lang="scss" scoped>
 #music {
-  z-index: 4;
+  z-index: 5;
   position: absolute;
   top: 20px;
   width: 200px;
   right: 20px;
-
-  border-radius: 50px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   opacity: 0.1;
   transition: all 0.3s;
 

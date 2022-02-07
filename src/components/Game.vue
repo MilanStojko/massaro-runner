@@ -6,8 +6,12 @@
       src="../assets/img/car.gif"
       alt=""
       id="massaro"
+<<<<<<< HEAD
       class="idle"
       :class="{ jump: jump, fall: fall, floating: floating }"
+=======
+      :class="{ idle: nowIdle, jump: nowJump, fall: nowFall }"
+>>>>>>> 2bf8bd847c20ce5c037ae839a518197ac93f5106
     />
     <div class="ground">
       <div class="flow"></div>
@@ -28,11 +32,12 @@ export default {
     return {
       gameStart: true,
       gamePause: false,
-      poits: 0,
-      gameSpeed: 15,
-      jump: false,
-      fall: false,
-      floating: false,
+      points: 0,
+      gameSpeed: 1,
+      nowIdle: true,
+      nowJump: false,
+      nowFall: false,
+      nowFloating: false,
     };
   },
   created() {
@@ -53,25 +58,26 @@ export default {
     massaroJump(e) {
       if (e.code === "Space") {
         console.log("Spacebar premuta");
-
         e.preventDefault();
-        this.jump = true;
-        setTimeout(() => {
-          this.jump = false;
-          this.floating = true;
-        }, 500);
+        if (this.nowIdle == true) {
+          this.nowIdle = false;
+          this.nowJump = true;
+        }
       }
     },
     massaroLanding(e) {
       if (e.code === "Space") {
         console.log("Spacebar rilasciata");
-        setTimeout(() => {
-          this.floating = false;
-          this.fall = true;
-        }, 1500);
-        setTimeout(() => {
-          this.fall = false;
-        }, 2000);
+
+        if (this.nowJump == true) {
+          this.nowJump = false;
+          this.nowFall = true;
+
+          setTimeout(() => {
+            this.nowFall = false;
+            this.nowIdle = true;
+          }, 500);
+        }
       }
     },
   },

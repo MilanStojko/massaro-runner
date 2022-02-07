@@ -86,3 +86,26 @@ body {
 //       0 -5px 20px 5px rgba(140, 0, 255, 0);
 //   }
 // }
+
+.small-screen {
+  display: none;
+  z-index: 3;
+  position: absolute;
+  top: 0;
+  height: 620px;
+  width: 100%;
+  padding: 0 50px;
+  background: rgba(168, 30, 202, 0.9);
+  font-size: 2rem;
+  color: #ffffff;
+  text-shadow: 0 0 5px rgb(236, 86, 144);
+  text-align: center;
+}
+
+@media screen and (max-width: 1300px) {
+  .small-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
