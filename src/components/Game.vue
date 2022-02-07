@@ -7,7 +7,6 @@
       alt=""
       id="massaro"
       :style="massaroStyle"
-      :class="{ idle: nowIdle, jump: nowJump, fall: nowFall }"
     />
     <div class="ground">
       <div class="flow"></div>
@@ -31,23 +30,21 @@ export default {
       points: 0,
       gameSpeed: 1,
       nowIdle: true,
-      nowJump: false,
-      nowFall: false,
       nowJumping: false,
-      position: 0,
+      position: 30,
       massaroStyle: {
-        bottom: "0px",
+        bottom: "30px",
       },
-      wewe: null,
-      jammja: null,
+      jump: null,
+      fall: null,
     };
   },
   created() {
     document.addEventListener("keydown", (e) => {
-      this.massaroJump(e);
+      this.commandJump(e);
     });
     document.addEventListener("keyup", (e) => {
-      this.massaroLanding(e);
+      this.stopJump(e);
     });
   },
   methods: {
@@ -61,45 +58,34 @@ export default {
       if (e.code === "Space") {
         console.log("Spacebar premuta");
         e.preventDefault();
-        if (this.nowIdle == true && this.nowJumping === false) {
-          this.nowJumping = true;
-          this.massaroJump();
-        }
+        this.massaroJump();
       }
     },
     massaroJump() {
-      this.wewe = setInterval(() => {
-        //cadi
-        if (this.position === 300) {
-          console.log("giu");
-          clearInterval(this.wewe);
-          this.jammja = setInterval(() => {
-            if (this.position === 0) {
-              clearInterval(this.jammja);
-            }
-            this.position -= 30;
-            this.massaroStyle.bottom = this.position + "px";
-          }, 20);
-        }
-        //salta
-        this.position += 30;
-        this.massaroStyle.bottom = this.position + "px";
-      }, 20);
-    },
-    massaroLanding(e) {
-      if (e.code === "Space") {
-        console.log("Spacebar rilasciata");
-
-        if (this.nowJump == true) {
-          this.nowJump = false;
-          this.nowFall = true;
-
-          setTimeout(() => {
-            this.nowFall = false;
-            this.nowIdle = true;
-          }, 500);
-        }
+      if (this.nowIdle == true && this.nowJumping === false) {
+        this.nowJumping = true;
+        this.jump = setInterval(() => {
+          //cadi
+          if (this.position === 300 || !this.nowJumping) {
+            console.log("giu");
+            clearInterval(this.jump);
+            this.fall = setInterval(() => {
+              if (this.position === 30) {
+                clearInterval(this.fall);
+                this.nowJumping = false;
+              }
+              this.position -= 10;
+              this.massaroStyle.bottom = this.position + "px";
+            }, 20);
+          }
+          //salta
+          this.position += 10;
+          this.massaroStyle.bottom = this.position + "px";
+        }, 20);
       }
+    },
+    stopJump() {
+      this.nowJumping = false;
     },
   },
 };
