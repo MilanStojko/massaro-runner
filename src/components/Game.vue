@@ -12,12 +12,12 @@
     <div class="ground">
       <div class="flow"></div>
     </div>
-    <div class="sky"></div>
-    <div class="animated-bg">
-      <video autoplay muted loop>
-        <source src="../assets/video/background.mp4" type="video/mp4" />
-      </video>
-    </div>
+    <!-- TODO Tolgo video per sostituirlo con immagini in movimento -->
+    <!-- <img src="../assets/img/palm2.jpg" alt="" class="palm2" />
+    <img src="../assets/img/palm1.jpg" alt="" class="palm1" />
+    <img src="../assets/img/city2.jpg" alt="" class="city2" />
+    <img src="../assets/img/city1.jpg" alt="" class="city1" />
+    <img src="../assets/img/sky.jpg" alt="" class="sky" /> -->
   </div>
 </template>
 
