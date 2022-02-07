@@ -1,5 +1,5 @@
 <template>
-  <div id="game">
+  <div id="game" @click="generateObstacle()">
     <!-- <div class="play" @click="startGame()">Gioca!!</div> -->
     <div class="vhs-glitch"></div>
     <img
@@ -9,6 +9,7 @@
       :style="massaroStyle"
       :class="{ idle: nowIdle }"
     />
+    <div id="porcoddio" :style="obstacle"></div>
     <div class="ground">
       <div class="flow"></div>
     </div>
@@ -26,19 +27,33 @@ export default {
   name: "Game",
   data() {
     return {
+      //data per game enviorment
       gameStart: true,
       gamePause: false,
       points: 0,
       gameSpeed: 1,
+      //data per massaroJump()
       nowIdle: true,
       nowJumping: false,
       position: 30,
-      massaroStyle: {
-        bottom: "30px",
-      },
       jump: null,
       fall: null,
       faling: false,
+      massaroStyle: {
+        bottom: "30px",
+      },
+      //data per generateObstacle()
+      obstacle: {
+        position: "absolute",
+        left: "",
+        bottom: "0px",
+        height: "200px",
+        width: "200px",
+        background: "orange",
+      },
+      obstaclePosition: 3000,
+      obstacleMoving: null,
+      ostacolo: document.getElementById("porcoddio"),
     };
   },
   created() {
@@ -48,6 +63,16 @@ export default {
     document.addEventListener("keyup", (e) => {
       this.stopJump(e);
     });
+  },
+  computed: {
+    randomTime() {
+      return (
+        Math.random() *
+        3000(() => {
+          return this.randomTime;
+        })
+      );
+    },
   },
   methods: {
     // startGame() {
@@ -98,10 +123,36 @@ export default {
     stopJump() {
       this.nowJumping = false;
     },
+    generateObstacle() {
+      const diocane = document.createElement("div");
+      this.ostacolo.$appendChild(diocane);
+      console.log(this.ostacolo);
+      this.obstacle.left = this.obstaclePosition + "px";
+      this.obstacleMoving = setInterval(() => {
+        this.obstaclePosition -= 10;
+        this.obstacle.left = this.obstaclePosition + "px";
+      }, 20);
+      // setTimeout(() => {
+      //   document.createElement("div").classList.add("staticobs");
+      // }, 20);
+    },
   },
 };
 </script>
 
 <style lang="scss" scoped>
 @import "../assets/style/game.scss";
+.staticobs {
+  z-index: 3;
+  background-color: orange;
+}
+#porcoddio {
+  z-index: 999;
+  background-color: orange;
+  div {
+    background-color: wheat;
+    height: 100px;
+    width: 100px;
+  }
+}
 </style>
