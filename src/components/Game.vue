@@ -6,6 +6,7 @@
       src="../assets/img/car.gif"
       alt=""
       id="massaro"
+      :style="massaroStyle"
       :class="{ idle: nowIdle, jump: nowJump, fall: nowFall }"
     />
     <div class="ground">
@@ -32,7 +33,13 @@ export default {
       nowIdle: true,
       nowJump: false,
       nowFall: false,
-      nowFloating: false,
+      nowJumping: false,
+      position: 0,
+      massaroStyle: {
+        bottom: "0px",
+      },
+      wewe: null,
+      jammja: null,
     };
   },
   created() {
@@ -50,15 +57,34 @@ export default {
     //     console.log(this.gameStart);
     //   }
     // },
-    massaroJump(e) {
+    commandJump(e) {
       if (e.code === "Space") {
         console.log("Spacebar premuta");
         e.preventDefault();
-        if (this.nowIdle == true) {
-          this.nowIdle = false;
-          this.nowJump = true;
+        if (this.nowIdle == true && this.nowJumping === false) {
+          this.nowJumping = true;
+          this.massaroJump();
         }
       }
+    },
+    massaroJump() {
+      this.wewe = setInterval(() => {
+        //cadi
+        if (this.position === 300) {
+          console.log("giu");
+          clearInterval(this.wewe);
+          this.jammja = setInterval(() => {
+            if (this.position === 0) {
+              clearInterval(this.jammja);
+            }
+            this.position -= 30;
+            this.massaroStyle.bottom = this.position + "px";
+          }, 20);
+        }
+        //salta
+        this.position += 30;
+        this.massaroStyle.bottom = this.position + "px";
+      }, 20);
     },
     massaroLanding(e) {
       if (e.code === "Space") {
