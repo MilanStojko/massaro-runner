@@ -1,6 +1,5 @@
 <template>
-  <div id="game" @click="generateObstacle()">
-    <!-- <div class="play" @click="startGame()">Gioca!!</div> -->
+  <div id="game">
     <div class="vhs-glitch"></div>
     <img
       src="../assets/img/car.gif"
@@ -9,7 +8,7 @@
       :style="massaroStyle"
       :class="{ idle: nowIdle }"
     />
-    <div id="porcoddio" :style="obstacle"></div>
+    <div class="obstacle"></div>
     <div class="ground">
       <div class="flow"></div>
     </div>
@@ -37,22 +36,21 @@ export default {
       position: 30,
       jump: null,
       fall: null,
-      faling: false,
+      falling: false,
       massaroStyle: {
         bottom: "30px",
       },
       //data per generateObstacle()
-      obstacle: {
-        position: "absolute",
-        left: "",
-        bottom: "0px",
-        height: "200px",
-        width: "200px",
-        background: "orange",
-      },
-      obstaclePosition: 3000,
-      obstacleMoving: null,
-      ostacolo: document.getElementById("porcoddio"),
+      // obstacle: {
+      //   position: "absolute",
+      //   left: "",
+      //   bottom: "0px",
+      //   height: "200px",
+      //   width: "200px",
+      //   background: "orange",
+      // },
+      // obstaclePosition: 3000,
+      // obstacleMoving: null,
     };
   },
   created() {
@@ -63,16 +61,19 @@ export default {
       this.stopJump(e);
     });
   },
-  computed: {
-    randomTime() {
-      return (
-        Math.random() *
-        3000(() => {
-          return this.randomTime;
-        })
-      );
-    },
+  mounted() {
+    this.generateObstacle();
   },
+  // computed: {
+  //   randomTime() {
+  //     return (
+  //       Math.random() *
+  //       3000(() => {
+  //         return this.randomTime;
+  //       })
+  //     );
+  //   },
+  // },
   methods: {
     // startGame() {
     //   if (!this.gameStart) {
@@ -91,7 +92,7 @@ export default {
       if (
         this.nowIdle == true &&
         this.nowJumping === false &&
-        this.faling == false
+        this.falling == false
       ) {
         this.nowJumping = true;
         this.nowIdle = false;
@@ -101,39 +102,37 @@ export default {
           if (this.position === 300 || !this.nowJumping) {
             console.log("giu");
             clearInterval(this.jump);
-            this.faling = true;
+            this.falling = true;
             this.fall = setInterval(() => {
               if (this.position === 30) {
                 clearInterval(this.fall);
-                this.faling = false;
+                this.falling = false;
                 this.nowIdle = true;
               }
               this.position -= 10;
               this.massaroStyle.bottom = this.position + "px";
               this.nowJumping = false;
-            }, 20);
+            }, 10);
           }
           //salta
           this.position += 10;
           this.massaroStyle.bottom = this.position + "px";
-        }, 20);
+        }, 10);
       }
     },
     stopJump() {
       this.nowJumping = false;
     },
     generateObstacle() {
-      const diocane = document.createElement("div");
-      this.ostacolo.$appendChild(diocane);
-      console.log(this.ostacolo);
-      this.obstacle.left = this.obstaclePosition + "px";
-      this.obstacleMoving = setInterval(() => {
-        this.obstaclePosition -= 10;
-        this.obstacle.left = this.obstaclePosition + "px";
-      }, 20);
-      // setTimeout(() => {
-      //   document.createElement("div").classList.add("staticobs");
-      // }, 20);
+      const obstacle = document.createElement("div");
+      obstacle.classList.add("obstacle");
+      document.getElementById("game").appendChild(obstacle);
+      console.log(obstacle);
+      // obstacle.left = this.obstaclePosition + "px";
+      // this.obstacleMoving = setInterval(() => {
+      //   this.obstaclePosition -= 10;
+      //   this.obstacle.left = this.obstaclePosition + "px";
+      // }, 15);
     },
   },
 };
@@ -141,17 +140,13 @@ export default {
 
 <style lang="scss" scoped>
 @import "../assets/style/game.scss";
-.staticobs {
-  z-index: 3;
+.obstacle {
+  z-index: 10;
+  position: absolute;
+  bottom: 0;
+  right: 0;
   background-color: orange;
-}
-#porcoddio {
-  z-index: 999;
-  background-color: orange;
-  div {
-    background-color: wheat;
-    height: 100px;
-    width: 100px;
-  }
+  height: 200px;
+  width: 200px;
 }
 </style>
